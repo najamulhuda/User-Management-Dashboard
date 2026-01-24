@@ -8,7 +8,7 @@ This project is ideal for **Junior / Trainee Full-Stack Developer** roles and de
 
 ## 🔗 Live Preview
 
-> Open `index.html` in your browser to run the project locally.
+> https://najamulhuda.github.io/User-Management-Dashboard/
 
 ---
 
