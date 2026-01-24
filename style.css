@@ -1,0 +1,23 @@
+body {
+  min-height: 100vh;
+}
+
+#sidebar {
+  width: 200px;
+  min-height: calc(100vh - 56px);
+  transition: all 0.3s;
+}
+
+#sidebar.hidden {
+  margin-left: -200px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav-link {
+    color: white;
+}
