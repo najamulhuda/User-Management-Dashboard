@@ -3,8 +3,26 @@ let users = [];
 
 // Sidebar toggle
 function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("hidden");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebarOverlay");
+  
+  // Check if mobile view
+  if (window.innerWidth <= 768) {
+    sidebar.classList.toggle("show");
+    overlay.classList.toggle("show");
+  } else {
+    sidebar.classList.toggle("hidden");
+  }
 }
+
+// Close sidebar when clicking on nav links (mobile only)
+document.querySelectorAll('#sidebar .nav-link').forEach(link => {
+  link.addEventListener('click', function() {
+    if (window.innerWidth <= 768) {
+      toggleSidebar();
+    }
+  });
+});
 
 // To Add user in the array
 function addUser() {
@@ -27,13 +45,13 @@ function addUser() {
   users.push(user);
   displayUsers();
 
-// These lines are used to clear the form so that every time modal appears, it show empty fields.
+  // These lines are used to clear the form so that every time modal appears, it shows empty fields.
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
   document.getElementById("role").value = "";
   errorMsg.innerText = "";
 
-// To Close the modal
+  // To Close the modal
   let modal = bootstrap.Modal.getInstance(document.getElementById("userModal"));
   modal.hide();
 }

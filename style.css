@@ -1,5 +1,6 @@
 body {
   min-height: 100vh;
+  padding-bottom: 60px;
 }
 
 #sidebar {
@@ -16,8 +17,83 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .nav-link {
-    color: white;
+  color: white;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  #sidebar {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    z-index: 999;
+    margin-left: -200px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  }
+  
+  #sidebar.show {
+    margin-left: 0 !important;
+  }
+  
+  .container-fluid {
+    padding: 15px !important;
+  }
+  
+  .table-responsive {
+    font-size: 14px;
+  }
+  
+  .table td, .table th {
+    padding: 8px 5px;
+    white-space: nowrap;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+  }
+  
+  .btn-sm {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+  }
+  
+  footer {
+    font-size: 0.85rem;
+    padding: 10px 5px !important;
+  }
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #sidebar {
+    width: 180px;
+  }
+  
+  .container-fluid {
+    padding: 20px !important;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+  }
+}
+
+/* Overlay for mobile sidebar */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 56px);
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
+}
+
+.sidebar-overlay.show {
+  display: block;
 }
