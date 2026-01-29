@@ -53,7 +53,7 @@ user-management-dashboard/
 1. Clone this repository
 
    ```bash
-   git clone https://github.com/your-username/user-management-dashboard.git
+   git clone https://github.com/najamulhuda/user-management-dashboard.git
    ```
 
 2. Open the project folder
